@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './fonts/Vazir.ttf'
 import './index.css';
 import App from './App';
+import { BrowserRouter as Router } from 'react-router-dom'
 import * as serviceWorker from './serviceWorker';
+import {AlibabaProvider} from './context'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <AlibabaProvider>
+    <Router>
+      <App />
+    </Router>
+  </AlibabaProvider>,
   document.getElementById('root')
 );
 
