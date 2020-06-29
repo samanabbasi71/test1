@@ -19,6 +19,7 @@ import {GiSugarCane} from 'react-icons/gi'
 import {RiStore2Line} from 'react-icons/ri'
 import {FiMessageSquare} from 'react-icons/fi'
 import reserveRoom from '../images/reserveRoom.svg'
+import Alert from '../components/Alert'
 
 
 
@@ -64,6 +65,8 @@ export class HotelPage extends Component {
         stores, others
         } = extras
         return (
+            <React.Fragment>
+            <Alert title="برای دیدن فیلتر پیج از  مسیر زیر هتل ها را انتخاب کنید..." />
             <div className="hotelpage__container">
                 <div className="hotelpage-top mx-auto">
                 {/* breadcrumb */}
@@ -521,6 +524,7 @@ export class HotelPage extends Component {
                 <HotelPageReservation />
                 </div>
             </div>
+            </React.Fragment>
         )
     }
 }

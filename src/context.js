@@ -236,8 +236,6 @@ class AlibabaProvider extends Component {
         } = this.state
         this.setState({
             filteredHotels: hotels,
-            region: 'all',
-            type: '',
             price: 0,
             minPrice: 0,
             maxPrice: 0,             
@@ -246,6 +244,17 @@ class AlibabaProvider extends Component {
             defectivePerson: false,
             bolling: false,
             torkishBath: false,
+            rate5:false,
+            rate4:false,
+            rate3:false,
+            rate2:false,
+            rate1:false,
+            rateNun:false,
+            pop9: false,
+            pop8: false,
+            pop7: false,
+            pop6: false,
+            pop5: false,
         })
     }
     render() {

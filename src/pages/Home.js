@@ -4,7 +4,7 @@ import Alert from '../components/Alert'
 export default function Home() {
     return (
         <React.Fragment>
-            <Alert />
+            <Alert title="این پروژه صرفا جهت ارایه در رزومه می باشد..."/>
             <Hotels />
         </React.Fragment>
     )
