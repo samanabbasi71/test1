@@ -2923,7 +2923,6 @@ transition: all 0.3s ease-in-out;
       overflow: hidden;
       transform: translateY(-50%);    
   }
-  
   /* Animation */
   .anim-typewriter{
     animation: typewriter 4s steps(44) 1s 1 normal both,
@@ -2931,7 +2930,7 @@ transition: all 0.3s ease-in-out;
   }
   @keyframes typewriter{
     from{width: 0;}
-    to{width: 28em;}
+    to{width: 80%;}
   }
   @keyframes blinkTextCursor{
     from{border-right-color: rgba(255,255,255,.75);}
