@@ -2914,7 +2914,7 @@ transition: all 0.3s ease-in-out;
 .line-1{
       position: relative;
       top: 50%;  
-      width: 80%;
+      width: 15rem;
       margin: 0 auto;
     //   border-right: 2px solid rgba(255,255,255,.75);
       font-size: 100%;
@@ -2930,7 +2930,7 @@ transition: all 0.3s ease-in-out;
   }
   @keyframes typewriter{
     from{width: 0;}
-    to{width: 80%;}
+    to{width: 15rem;}
   }
   @keyframes blinkTextCursor{
     from{border-right-color: rgba(255,255,255,.75);}
