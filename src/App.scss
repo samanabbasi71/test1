@@ -2282,7 +2282,7 @@ $react-rater-active: #ffa500 !default;
   }
 // ************ bread crumb *******************
 .breadcrumb__container {
-    display: none;
+    display: block;
 }
 .hotelpage-breadcrumb {
 
@@ -2914,7 +2914,7 @@ transition: all 0.3s ease-in-out;
 .line-1{
       position: relative;
       top: 50%;  
-      width: 28em;
+      width: 80%;
       margin: 0 auto;
     //   border-right: 2px solid rgba(255,255,255,.75);
       font-size: 100%;

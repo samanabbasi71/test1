@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import items from './data'
-import Hotel from './components/Hotel'
 
 const AlibabaContext = React.createContext()
 
