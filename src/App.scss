@@ -2529,6 +2529,7 @@ $react-rater-active: #ffa500 !default;
     border-top: 1px solid var(--lightGrey);
 }
 .hotelsearchpanel-city__container {
+    position: relative;
     display: flex;
     padding: 10px;
     background: #fff;
@@ -2537,7 +2538,34 @@ $react-rater-active: #ffa500 !default;
     margin-bottom: 8px;
     width: 100%;
 }
-
+.overflow-list {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: block;
+    background-color: var(--mainWhite);
+    box-shadow: 0 2px 3px rgba(0,0,0,.15);
+}
+.hotelsearchpanel-ul {
+    display: block;
+    text-decoration: none !important;
+    text-transform: capitalize;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+    transition: all .14s ease;
+    font-size: 1rem;
+    overflow: auto;
+    list-style-type: none;
+}
+.hotelsearchpanel-li {
+    text-align: right;
+    display: block;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--lightGrey);
+    transition: all .14s ease;
+}
 .hotelsearchpanel-date__container {
     display: flex;
     justify-content: space-between;
@@ -2824,6 +2852,16 @@ transition: all 0.3s ease-in-out;
         border-color: orange;
     }
 }
+// 
+select:required:invalid {
+    color: gray;
+  }
+  option[value=""][disabled] {
+    display: none;
+  }
+  option {
+    color: black;
+  }
 
 // checkbox custome
 .filter-star-rate {
@@ -2943,3 +2981,25 @@ transition: all 0.3s ease-in-out;
   }
   
 //   range
+select {
+    /* for Firefox */
+    -moz-appearance: none;
+    /* for Chrome */
+    -webkit-appearance: none;
+  }
+  
+  /* For IE10 */
+  select::-ms-expand {
+    display: none;
+  }
+  .hotelsearchpanel-select {
+      cursor: pointer;
+      border: none;
+      width: 100%;
+  }
+  .hotelsearchpanel-option {
+    cursor: pointer;
+    border-bottom: 1px solid #f5f5f5;
+    font-size: 20px;
+}
+

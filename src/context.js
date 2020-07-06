@@ -10,6 +10,7 @@ class AlibabaProvider extends Component {
         filteredHotels : [],
         loading: true,
         city: 'istanbul',
+        filterCity: '',
         region: 'all',
         type: '',
         price: 0,
@@ -113,7 +114,7 @@ class AlibabaProvider extends Component {
         const value = target.type === 'checkbox' ? 
         target.checked : target.value
         const name = event.target.name
-        console.log(target.checked);
+        console.log(target.value);
         
         this.setState({
             [name]: value
@@ -126,6 +127,7 @@ class AlibabaProvider extends Component {
             hotels,
             region,
             city,
+            filterCity,
             price,
             minPrice,
             maxPrice,
@@ -144,15 +146,12 @@ class AlibabaProvider extends Component {
             pop8,
             pop7,
             pop6,
-            pop5
+            pop5,
         } = this.state
         let tempHotels = [...hotels]
         // parseint
         price = parseInt(price)
         // city
-        // if(city){
-        //     tempHotels = tempHotels.filter(hotel => hotel.city === city)
-        // }
         // region
         // if(region !== 'all'){
         //     tempHotels = tempHotels.filter(hotel => hotel.region === region)
@@ -225,7 +224,7 @@ class AlibabaProvider extends Component {
         // city
         this.setState({
             filteredHotels: tempHotels
-        } , console.log("state changed"))
+        } , console.log("state changed", filterCity))
 
     }
 
@@ -264,7 +263,7 @@ class AlibabaProvider extends Component {
                 getHotels: this.getHotels,
                 hadleFeachuredHotel: this.hadleFeachuredHotel,
                 handleChange: this.handleChange,
-                handleReset: this.handleReset
+                handleReset: this.handleReset,
             }}>
                 {this.props.children}
             </AlibabaContext.Provider>

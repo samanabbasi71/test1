@@ -5,32 +5,19 @@ import { FaRegUser } from 'react-icons/fa'
 import { GoLocation } from 'react-icons/go'
 import { MdCardGiftcard } from 'react-icons/md'
 import Ellipsis from '../../images/Ellipsis45.gif'
+import {Link} from 'react-router-dom'
 // get all unique values
-// const getUnique = (items, value) => {
-//     return [...new Set(items.map(item => item[value]))]
-// }
 
 export default function HotelSearchPanel() {
     const context = useContext(AlibabaContext)
 
     const {
-        loading,
-        hotels,
+        city,
         handleChange,
-        city
+        handleRefresh,
+        filterCity
     } = context
-    // extras uniqye
-    // let cities = getUnique(hotels, 'city')
-    // cities = [...cities]
-    // cities = cities.map((item, index) => {
-    //     return (
-    //         <option className="filter-li" key={index} value={item} id="city" name="city"
-    //         onClick={handleChange}>
-    //             {item}
-    //         </option>
-    //     )
-    // })
-        return (
+    return(
             <form class="hotelpanel-filterpage-lg" >
                     <div className="radios">
                     <div className="radio ml-3">
@@ -62,8 +49,30 @@ export default function HotelSearchPanel() {
                                         {cities}
                                     </select>
                                 </div> */}
-                                <input type="text" value="" placeholder="جستوجوی مقصد یا هتل داخلی یا خارجی"
-                                className="hotelsearchpanel-input text-muted"/>
+                                <select id="filterCity" name="filterCity" 
+                                className="hotelsearchpanel-select text-muted"
+                                onChange={handleChange}
+                                required>
+                                <option value="" disabled selected>جستوجوی مقصد یا هتل داخلی یا خارجی</option>
+                                <option className="hotelsearchpanel-option" value='tr-istanbul'>
+                                    Istanbul
+                                </option>
+                                <option className="hotelsearchpanel-option" value='fr-paris'>
+                                    Paris
+                                </option>
+                                <option className="hotelsearchpanel-option" value='ae-dubai'>
+                                    Dubai
+                                </option>
+                                <option className="hotelsearchpanel-option" value='tr-ankara'>
+                                    Ankara
+                                </option>
+                                <option className="hotelsearchpanel-option" value='az-baku'>
+                                    Baku
+                                </option>
+                                <option className="hotelsearchpanel-option" value='ge-tiflis'>
+                                    Teflisi
+                                </option>
+                                </select>
                     </div>
                     <div className="hotelsearchpanel-date__container ">
                             <div className="hotelsearchpanel-date hotelsearchpanel-date--one">
@@ -95,13 +104,15 @@ export default function HotelSearchPanel() {
                         </div>
                     </div>
                     <div className="hotelsearchpanel-search__container">
+                        <Link to={`/${filterCity}/hotel-filters`} >
                         <button className="hotelsearchpanel-search">
                             <img src={Ellipsis} alt="loading-gif"
-                            className={loading ? "loading-gif" : "loading-gif-hide" }/>
-                            <p className={loading ? "loading-text-hide" : "loading-text" }>
+                            className="loading-gif-hide" />
+                            <p className="loading-text" >
                                 جستجو
                             </p>
-                        </button>
+                        </button> 
+                        </Link>
                     </div>
                     </div>
         </form>

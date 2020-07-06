@@ -12,8 +12,13 @@ export default class HotelFilters extends Component {
     }
     static contextType = AlibabaContext
     render() {
-        const { getHotels } = this.context
-        const filteredHotels = getHotels(this.state.url)
+        const { getHotels , filterCity, hotels } = this.context
+        let filteredHotels = hotels
+        if(filterCity == '' ) {
+            filteredHotels = getHotels(this.state.url)
+        } else {
+            filteredHotels = getHotels(filterCity)
+        }
         if(!filteredHotels) {
             return <Error />
         }
