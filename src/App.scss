@@ -20,7 +20,7 @@
     --lightBlue: rgb(73, 144, 226);
     --Orange: rgb(255, 165, 0);
 }
-html {
+body {
     background: var(--mainWhite) !important;
     color: var(--darkGrey) !important;
     direction: rtl;
@@ -29,6 +29,9 @@ html {
     font-size: 1rem;
     line-height: 1.8;
     cursor: default;
+    overflow-x: hidden;
+}
+html {
     overflow-x: hidden;
 }
 
